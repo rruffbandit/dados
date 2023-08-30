@@ -1,7 +1,12 @@
 
+
+
+
 //calculo de score
 SubAlgoritmo petty <- CALCULOSCORE( ra, re, ri, ro, ru, ry)
 	petty <- ra + re + ro + ru + ri + ry
+	
+	
 FinSubAlgoritmo
 
 
@@ -66,7 +71,7 @@ Algoritmo FUNCIONESDADOSAA
 	
 	mientras score < 10000 Hacer
 		
-		escribir "aight get rEADY 6 DADOS LETSSS GOOOOO!!!!!!!!!!!!!!!!!"
+		escribir "AIGHT READY 6 DADOS LETSSS GOOOOO!!!!!!"
 		
 		para i = 1 hasta 6 con paso 1 Hacer
 			dados[i] = Aleatorio(1,6) //1 a 6 duhh
@@ -88,6 +93,36 @@ Algoritmo FUNCIONESDADOSAA
 		FinPara
 		escribir ""
 		
+		
+		repetir
+			escribir "le gustaria cambiar dados? 1_Si 0_No"
+			leer r
+			
+			si(r = 1) Entonces
+				repetir
+					escribir "que dado?"
+					leer n
+					
+					para i = 1 hasta 6 con paso 1 Hacer
+						si(i = n) Entonces
+						dados[i] = Aleatorio(1,6)
+						FinSi
+					FinPara
+					escribir ""
+						para j = 1 hasta 6 con paso 1 Hacer
+							escribir Sin Saltar"[", dados[j], "]"
+						FinPara
+					escribir "algun otro? 1_si 0_No"
+					leer p
+				hasta que p = 0
+				r = 0
+				
+			FinSi
+			
+			
+			
+		hasta que r = 0
+		
 		//variable de contadores
 		c_uno = CONTADORES( dados , 1)
 		c_dos = CONTADORES( dados , 2)
@@ -106,8 +141,7 @@ Algoritmo FUNCIONESDADOSAA
 		p_seis = TODOLODEMAS(6, c_seis)
 		
 		score = CALCULOSCORE (p_unos,p_dos,p_tres,p_cuatro,p_cinco,p_seis) + score 
-		escribir score
-		leer n
+		escribir "S C O R E  ",score
 		
 	FinMientras
 	
